@@ -1,17 +1,29 @@
 def monoalphabetic_cipher(text, key): 
 
-output = "" 
+# initialize the ciphertext variable 
 
-for i in range(len(text)): 
+ciphertext = "" 
 
-char = text[i]I 
+# traverse through each character in the given text 
 
-if char.isupper(): 
+for char in text: 
 
-output += key[ord(char) - ord('A')].upper() 
+# if the character is in upper case 
+
+if (char.isupper()): 
+
+# find the corresponding ciphertext character 
+
+ciphertext += key[ord(char) - ord('A')].upper() 
+
+# if the character is in lower case 
 
 else: 
 
-output += key[ord(char) - ord('a')] 
+# find the corresponding ciphertext character 
 
-return output
+ciphertext += key[ord(char) - ord('a')].lower() 
+
+# return the ciphertext 
+
+return ciphertext
